@@ -11,7 +11,8 @@ verständlich, und ändere nur, worum gebeten wurde.
 
 ## Struktur
 - `src/tool_agent/tools.py` – Tool-Funktionen + JSON-Schemas (`TOOL_DEFINITIONS`, `TOOL_FUNCTIONS`)
-- `src/tool_agent/agent.py` – einziger Ort mit Modell-Aufrufen (Agent-Loop)
+- `src/tool_agent/agent.py` – Anthropic-Loop; `agent_openai.py` – OpenAI-Loop
+- `src/tool_agent/common.py` – gemeinsamer Prompt, Schrittlimit und Fehler
 - `src/tool_agent/api.py` – FastAPI-Endpoints
 
 ## Regeln

@@ -6,28 +6,18 @@ Ablauf:
      → Tool ausführen, Ergebnis zurückschicken, zurück zu 1.
   3. Sonst: fertige Antwort zurückgeben.
 
-Alle Modell-Aufrufe passieren NUR in dieser Datei. Willst du später den Anbieter
-wechseln (z. B. OpenAI), musst du nur hier etwas ändern.
+Anthropic-Modell-Aufrufe bleiben hier; der vergleichbare OpenAI-Loop steht
+in agent_openai.py. Beide nutzen dieselben Tools und denselben System-Prompt.
 """
 
 import os
 
 import anthropic
 
+from tool_agent.common import MAX_STEPS, SYSTEM_PROMPT, AgentError
 from tool_agent.tools import TOOL_DEFINITIONS, run_tool
 
 DEFAULT_MODEL = "claude-opus-5-5"
-MAX_STEPS = 10  # Schutz gegen Endlosschleifen (und hohe Kosten)
-
-SYSTEM_PROMPT = (
-    "Du bist ein hilfsbereiter Assistent. Antworte auf Deutsch und knapp. "
-    "Nutze die verfügbaren Tools für Rechnungen, Uhrzeiten und Wetter, "
-    "statt Werte zu raten."
-)
-
-
-class AgentError(RuntimeError):
-    """Der Agent konnte keine Antwort liefern."""
 
 
 def ask(question: str, client: anthropic.Anthropic | None = None) -> dict:
