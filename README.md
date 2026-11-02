@@ -9,6 +9,7 @@ Ein strukturierter Lernpfad für den Einstieg ins AI Engineering: Apps, Funktion
 .
 ├── README.md                    ← du bist hier
 ├── docs/
+│   ├── 00-my-setup.md           ← START HERE: my decided setup (Mac mini + iPad, Python)
 │   ├── 01-tools-vergleich.md    ← Claude Code vs. OpenAI Codex & Co.
 │   ├── 02-setup.md              ← Dein Arbeitsplatz Schritt für Schritt
 │   └── 03-projekt-workflow.md   ← Wie du JEDES Projekt strukturiert baust
