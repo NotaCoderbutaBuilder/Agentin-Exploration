@@ -99,3 +99,10 @@ Anbieterwechsel später eine Änderung an einer Stelle statt im ganzen Code.
    - Claude Code: https://code.claude.com/docs
    - Claude API: https://platform.claude.com/docs
    - OpenAI: https://platform.openai.com/docs
+
+## Praktischer Vergleich im Repository
+
+Projekt 01 enthält jetzt beide selbst implementierten Loops: `agent.py` für
+Anthropic und `agent_openai.py` für OpenAI Responses. Sie teilen Tools, Prompt
+und Rückgabeformat. Den Ablauf mit konkreten Request-/Response-Beispielen und den
+Grenzen der Offline-Tests erklärt [04-function-calling-vergleich.md](04-function-calling-vergleich.md).
